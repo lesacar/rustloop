@@ -63,6 +63,11 @@ fn main() {
         // Execute the command
         if let Err(err) = cmd.spawn() {
             eprintln!("Failed to execute command: {}", err);
+        } else {
+            // Wait for the command to finish
+            if let Some(mut child) = cmd.spawn().ok() {
+                child.wait().expect("Failed to wait for command");
+            }
         }
         sleep(Duration::from_millis(sleepdur));
     }
