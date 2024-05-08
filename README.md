@@ -6,3 +6,5 @@ With cmd.spawn() and cmd.wait() they both get 3200 commands per 5 seconds on 1ms
 \
 the C version gets 1200 commands per 5 seconds using 1ms delay with waiting for the process being looped to finish\
 and without waiting, it gets 5000 processes ran in 5 sec, which is correct ( +-50 )
+\
+Both programs tested with ```loop 1 echo test```
